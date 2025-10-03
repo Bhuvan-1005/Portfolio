@@ -12,7 +12,7 @@ export const portfolioConfig = {
   },
 
   social: {
-    github: "https://www.github.com/Kitkat1005",
+    github: "https://www.github.com/Bhuvan-1005",
     linkedin: "https://www.linkedin.com/in/bhuvaneshwar-n-2577232b3",
     twitter: "https://www.x.com/Bhuvaneshwarn4",
     email: "mailto:bhuvaneshwar2006@gmail.com",
@@ -36,11 +36,11 @@ export const portfolioConfig = {
       id: 1,
       title: "CrisisPOP",
       description:
-        "A crisis management application built with JavaScript, featuring responsive design and interactive user interface.",
+        "A comprehensive crisis management web application built with vanilla JavaScript, featuring responsive design and interactive user interfaces for emergency response coordination.",
       image:
         "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       technologies: ["JavaScript", "CSS", "HTML"],
-      githubUrl: "https://github.com/Kitkat1005/CrisisPOP",
+      githubUrl: "https://github.com/Bhuvan-1005/CrisisPOP",
       liveUrl: "",
       featured: true,
     },
@@ -48,11 +48,11 @@ export const portfolioConfig = {
       id: 2,
       title: "AI-Invest-Platform",
       description:
-        "An AI-powered investment platform integrating blockchain technology with TypeScript and Solidity for secure and intelligent financial solutions.",
+        "A cutting-edge AI-powered investment platform that integrates blockchain technology. Features smart contracts written in Solidity, a modern web3 frontend built with TypeScript, and intelligent investment algorithms for secure and automated financial solutions.",
       image:
         "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       technologies: ["TypeScript", "Solidity", "JavaScript", "CSS"],
-      githubUrl: "https://github.com/Kitkat1005/AI-Invest-Platform",
+      githubUrl: "https://github.com/Bhuvan-1005/AI-Invest-Platform",
       liveUrl: "",
       featured: true,
     },
@@ -70,7 +70,7 @@ export const portfolioConfig = {
 
   // GitHub configuration
   github: {
-    username: "Kitkat1005", // Replace with your actual GitHub username
+    username: "Bhuvan-1005", // Replace with your actual GitHub username
     showActivity: true,
     showStats: true,
   },

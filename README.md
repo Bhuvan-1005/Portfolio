@@ -19,6 +19,7 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **Next.js 14** - React framework with App Router
 - **TypeScript** - Type-safe development
 - **Tailwind CSS** - Utility-first CSS framework
@@ -27,29 +28,34 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 - **Framer Motion** - Animation library
 
 ### Backend
+
 - **Next.js API Routes** - Serverless functions
 - **Resend** - Email delivery service
 
 ### Deployment
+
 - **Vercel** - Optimal hosting for Next.js applications
 - **GitHub** - Version control and CI/CD
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+
+- Node.js 18+
 - npm or pnpm
 - Git
 
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Kitkat1005/Portfolio.git
    cd Portfolio
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -57,15 +63,19 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
    ```
 
 3. **Set up environment variables**
+
    ```bash
    cp .env.local.example .env.local
    ```
+
    Add your Resend API key to `.env.local`:
+
    ```
    RESEND_API_KEY=your_resend_api_key_here
    ```
 
 4. **Run the development server**
+
    ```bash
    npm run dev
    # or
@@ -87,6 +97,7 @@ To enable the contact form functionality:
 ## 🎨 Customization
 
 ### Personal Information
+
 Edit the portfolio configuration in `/data/portfolio-config.ts`:
 
 ```typescript
@@ -97,13 +108,15 @@ export const portfolioConfig = {
     // ... other fields
   },
   // ... other sections
-}
+};
 ```
 
 ### Projects
+
 Add your projects to the `projects` array in the same file.
 
 ### Styling
+
 - Customize colors and themes in `/styles/globals.css`
 - Modify component styles using Tailwind classes
 - Add custom animations in component files
@@ -111,6 +124,7 @@ Add your projects to the `projects` array in the same file.
 ## 📱 Responsive Design
 
 The portfolio is fully responsive and optimized for:
+
 - 📱 Mobile devices (320px+)
 - 📱 Tablets (768px+)
 - 💻 Desktops (1024px+)
@@ -178,6 +192,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 📞 Contact
 
 **Bhuvaneshwar N**
+
 - 📧 Email: bhuvaneshwar2006@gmail.com
 - 💼 LinkedIn: [bhuvaneshwar-n-2577232b3](https://www.linkedin.com/in/bhuvaneshwar-n-2577232b3)
 - 🐙 GitHub: [@Kitkat1005](https://github.com/Kitkat1005)

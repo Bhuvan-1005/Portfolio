@@ -28,7 +28,11 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="py-20 bg-muted/30">
+    <section
+      id="about"
+      ref={sectionRef}
+      className="py-12 sm:py-16 lg:py-20 bg-muted/30"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`transition-all duration-1000 ${
@@ -51,7 +55,7 @@ export default function About() {
               {/* Quick Info Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
                 <Card className="bg-background/50 border-border">
-                  <CardContent className="p-6 flex items-center space-x-3">
+                  <CardContent className="p-4 flex items-center space-x-3">
                     <MapPin className="w-5 h-5 text-primary" />
                     <div>
                       <p className="text-sm text-muted-foreground">Location</p>
@@ -63,7 +67,7 @@ export default function About() {
                 </Card>
 
                 <Card className="bg-background/50 border-border">
-                  <CardContent className="p-6 flex items-center space-x-3">
+                  <CardContent className="p-4 flex items-center space-x-3">
                     <Award className="w-5 h-5 text-primary" />
                     <div>
                       <p className="text-sm text-muted-foreground">
@@ -75,7 +79,7 @@ export default function About() {
                 </Card>
 
                 <Card className="bg-background/50 border-border sm:col-span-2 lg:col-span-1">
-                  <CardContent className="p-6 flex items-center justify-center">
+                  <CardContent className="p-4 flex items-center justify-center">
                     <Button
                       onClick={() =>
                         window.open(

@@ -1,49 +1,59 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ExternalLink, Github, Star } from "lucide-react"
-import { portfolioConfig } from "@/data/portfolio-config"
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github, Star } from "lucide-react";
+import { portfolioConfig } from "@/data/portfolio-config";
 
 export default function Projects() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [filter, setFilter] = useState<"all" | "featured">("all")
-  const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const [filter, setFilter] = useState<"all" | "featured">("all");
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
-  const filteredProjects = portfolioConfig.projects.filter((project) => (filter === "all" ? true : project.featured))
+  const filteredProjects = portfolioConfig.projects.filter((project) =>
+    filter === "all" ? true : project.featured
+  );
 
   return (
-    <section id="projects" ref={sectionRef} className="py-20 bg-muted/30">
+    <section
+      id="projects"
+      ref={sectionRef}
+      className="py-12 sm:py-16 lg:py-20 bg-muted/30"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
         >
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Featured Projects</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Featured Projects
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg mb-8">
-              A showcase of my recent work, demonstrating my skills in full-stack development, UI/UX design, and
-              problem-solving.
+              A showcase of my recent work, demonstrating my skills in
+              full-stack development, UI/UX design, and problem-solving.
             </p>
 
             {/* Filter Buttons */}
@@ -60,7 +70,8 @@ export default function Projects() {
                 onClick={() => setFilter("featured")}
                 className="px-6"
               >
-                Featured ({portfolioConfig.projects.filter((p) => p.featured).length})
+                Featured (
+                {portfolioConfig.projects.filter((p) => p.featured).length})
               </Button>
             </div>
           </div>
@@ -94,13 +105,21 @@ export default function Projects() {
                   )}
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                     <Button size="sm" variant="secondary" asChild>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Github className="w-4 h-4 mr-2" />
                         Code
                       </a>
                     </Button>
                     <Button size="sm" asChild>
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Live Demo
                       </a>
@@ -114,13 +133,19 @@ export default function Projects() {
                       <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {project.description}
+                      </p>
                     </div>
 
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-xs">
+                        <Badge
+                          key={tech}
+                          variant="secondary"
+                          className="text-xs"
+                        >
                           {tech}
                         </Badge>
                       ))}
@@ -129,13 +154,21 @@ export default function Projects() {
                     {/* Links */}
                     <div className="flex space-x-4 pt-2">
                       <Button variant="outline" size="sm" asChild>
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <Github className="w-4 h-4 mr-2" />
                           View Code
                         </a>
                       </Button>
                       <Button size="sm" asChild>
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <ExternalLink className="w-4 h-4 mr-2" />
                           Live Demo
                         </a>
@@ -150,11 +183,16 @@ export default function Projects() {
           {/* Call to Action */}
           <div className="text-center mt-16">
             <p className="text-muted-foreground mb-6">
-              Interested in seeing more of my work or discussing a potential collaboration?
+              Interested in seeing more of my work or discussing a potential
+              collaboration?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
-                <a href={portfolioConfig.social.github} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={portfolioConfig.social.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Github className="w-4 h-4 mr-2" />
                   View All Projects on GitHub
                 </a>
@@ -162,7 +200,11 @@ export default function Projects() {
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={() =>
+                  document
+                    .querySelector("#contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 Get In Touch
               </Button>
@@ -171,5 +213,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }

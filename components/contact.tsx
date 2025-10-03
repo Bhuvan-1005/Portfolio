@@ -1,60 +1,71 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useEffect, useRef, useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Loader2 } from "lucide-react"
-import { portfolioConfig } from "@/data/portfolio-config"
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  Twitter,
+  Loader2,
+} from "lucide-react";
+import { portfolioConfig } from "@/data/portfolio-config";
 
 export default function Contact() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
-    type: "success" | "error" | null
-    message: string
-  }>({ type: null, message: "" })
-  const sectionRef = useRef<HTMLElement>(null)
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear status when user starts typing
     if (submitStatus.type) {
-      setSubmitStatus({ type: null, message: "" })
+      setSubmitStatus({ type: null, message: "" });
     }
-  }
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus({ type: null, message: "" })
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
 
     try {
       const response = await fetch("/api/contact", {
@@ -63,49 +74,60 @@ export default function Contact() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      })
+      });
 
-      const data = await response.json()
+      const data = await response.json();
 
       if (response.ok) {
         setSubmitStatus({
           type: "success",
-          message: data.message || "Thank you for your message! I'll get back to you soon.",
-        })
-        setFormData({ name: "", email: "", message: "" })
+          message:
+            data.message ||
+            "Thank you for your message! I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
       } else {
         setSubmitStatus({
           type: "error",
           message: data.error || "Failed to send message. Please try again.",
-        })
+        });
       }
     } catch (error) {
       setSubmitStatus({
         type: "error",
         message: "Network error. Please check your connection and try again.",
-      })
+      });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   const socialIcons = {
     github: Github,
     linkedin: Linkedin,
     twitter: Twitter,
-  }
+  };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-muted/30">
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="py-12 sm:py-16 lg:py-20 bg-muted/30"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          className={`transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
         >
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">Get In Touch</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+              Get In Touch
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Have a project in mind or want to discuss opportunities? I'd love to hear from you.
+              Have a project in mind or want to discuss opportunities? I'd love
+              to hear from you.
             </p>
           </div>
 
@@ -113,10 +135,14 @@ export default function Contact() {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-semibold text-foreground mb-6">Let's Connect</h3>
+                <h3 className="text-2xl font-semibold text-foreground mb-6">
+                  Let's Connect
+                </h3>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  I'm always interested in new opportunities, whether it's a full-time position, freelance project, or
-                  just a chat about technology. Feel free to reach out through any of the channels below.
+                  I'm always interested in new opportunities, whether it's a
+                  full-time position, freelance project, or just a chat about
+                  technology. Feel free to reach out through any of the channels
+                  below.
                 </p>
               </div>
 
@@ -158,7 +184,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Location</p>
-                    <p className="text-muted-foreground">{portfolioConfig.personal.location}</p>
+                    <p className="text-muted-foreground">
+                      {portfolioConfig.personal.location}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -170,7 +198,8 @@ export default function Contact() {
                   {Object.entries(portfolioConfig.social)
                     .filter(([platform]) => platform !== "email")
                     .map(([platform, url]) => {
-                      const Icon = socialIcons[platform as keyof typeof socialIcons]
+                      const Icon =
+                        socialIcons[platform as keyof typeof socialIcons];
                       return (
                         <a
                           key={platform}
@@ -182,7 +211,7 @@ export default function Contact() {
                           <Icon className="w-5 h-5" />
                           <span className="sr-only">{platform}</span>
                         </a>
-                      )
+                      );
                     })}
                 </div>
               </div>
@@ -251,7 +280,12 @@ export default function Contact() {
                     </div>
                   )}
 
-                  <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    size="lg"
+                    disabled={isSubmitting}
+                  >
                     {isSubmitting ? (
                       <>
                         <Loader2 className="w-4 h-4 mr-2 animate-spin" />
@@ -271,5 +305,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
