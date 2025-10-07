@@ -46,6 +46,43 @@ export const portfolioConfig = {
     },
     {
       id: 2,
+      title: "MediSeal",
+      description:
+        "An AI-powered pharmaceutical supply chain management system with blockchain integration. Features smart contracts for secure drug tracking, AI-driven analytics for supply chain optimization, and a modern web interface ensuring transparency and authenticity in pharmaceutical distribution.",
+      image:
+        "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      technologies: [
+        "React",
+        "Node.js",
+        "Solidity",
+        "AI/ML",
+        "Blockchain",
+        "TypeScript",
+      ],
+      githubUrl: "https://github.com/Bhuvan-1005/MediSeal",
+      liveUrl: "",
+      featured: true,
+    },
+    {
+      id: 3,
+      title: "Portfolio Website",
+      description:
+        "A modern, responsive portfolio website built with Next.js 14 and TypeScript. Features dark/light theme toggle, contact form with email integration, GitHub activity display, and optimized performance with Tailwind CSS and Radix UI components.",
+      image:
+        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Radix UI",
+        "Framer Motion",
+      ],
+      githubUrl: "https://github.com/Bhuvan-1005/Portfolio",
+      liveUrl: "",
+      featured: true,
+    },
+    {
+      id: 4,
       title: "AI-Invest-Platform",
       description:
         "A cutting-edge AI-powered investment platform that integrates blockchain technology. Features smart contracts written in Solidity, a modern web3 frontend built with TypeScript, and intelligent investment algorithms for secure and automated financial solutions.",
