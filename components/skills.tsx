@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { portfolioConfig } from "@/data/portfolio-config";
@@ -87,7 +88,17 @@ export default function Skills() {
                         <div key={skill.name} className="space-y-2">
                           <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-2">
-                              <span className="text-lg">{skill.icon}</span>
+                              {skill.icon.startsWith('http') ? (
+                                <Image
+                                  src={skill.icon}
+                                  alt={skill.name}
+                                  width={20}
+                                  height={20}
+                                  className="w-5 h-5"
+                                />
+                              ) : (
+                                <span className="text-lg">{skill.icon}</span>
+                              )}
                               <span className="font-medium text-foreground">
                                 {skill.name}
                               </span>
@@ -116,18 +127,28 @@ export default function Skills() {
             </h3>
             <div className="flex flex-wrap justify-center items-center gap-8">
               {portfolioConfig.skills.map((skill, index) => (
-                <div
-                  key={skill.name}
-                  className={`flex flex-col items-center space-y-2 p-4 rounded-lg bg-muted/20 border border-border hover:bg-muted/40 transition-all duration-300 ${
-                    isVisible ? "animate-fade-in" : "opacity-0"
-                  }`}
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <span className="text-3xl">{skill.icon}</span>
-                  <span className="text-sm font-medium text-muted-foreground">
-                    {skill.name}
-                  </span>
-                </div>
+                                  <div
+                    key={skill.name}
+                    className={`flex flex-col items-center space-y-2 p-4 rounded-lg bg-muted/20 border border-border hover:bg-muted/40 transition-all duration-300 ${
+                      isVisible ? "animate-fade-in" : "opacity-0"
+                    }`}
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    {skill.icon.startsWith('http') ? (
+                      <Image
+                        src={skill.icon}
+                        alt={skill.name}
+                        width={32}
+                        height={32}
+                        className="w-8 h-8"
+                      />
+                    ) : (
+                      <span className="text-3xl">{skill.icon}</span>
+                    )}
+                    <span className="text-sm font-medium text-muted-foreground">
+                      {skill.name}
+                    </span>
+                  </div>
               ))}
             </div>
           </div>
