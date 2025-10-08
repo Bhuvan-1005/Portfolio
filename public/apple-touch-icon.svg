@@ -1,0 +1,16 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" rx="32" fill="#000000"/>
+  <mask id="mask0_apple" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
+    <rect width="180" height="180" rx="32" fill="#000000"/>
+  </mask>
+  <g mask="url(#mask0_apple)">
+    <path d="M75.75 47.75H61.5V132.25H75.75V63.125L115.25 132.25H129.5V47.75H115.25V116.875L75.75 47.75Z" fill="white"/>
+    <path d="M146 47.75V132.25" stroke="url(#appleGradient)" stroke-width="14"/>
+  </g>
+  <defs>
+    <linearGradient id="appleGradient" x1="146" y1="47.75" x2="146" y2="132.25" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white"/>
+      <stop offset="1" stop-color="white" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+</svg>
