@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { portfolioConfig } from "@/data/portfolio-config";
+import TypingEffect from "@/components/typing-effect";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -48,10 +49,29 @@ export default function Hero() {
                 {portfolioConfig.personal.name}
               </h1>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-muted-foreground">
-                {portfolioConfig.personal.title}
+                <TypingEffect
+                  texts={[
+                    "Full Stack Developer",
+                    "React Specialist",
+                    "Node.js Expert",
+                    "Blockchain Developer",
+                    "Problem Solver",
+                  ]}
+                  speed={120}
+                  deleteSpeed={80}
+                  pauseDuration={3000}
+                />
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-                {portfolioConfig.personal.tagline}
+                <span className="text-primary font-semibold">
+                  Passionate about creating
+                </span>{" "}
+                exceptional digital experiences with modern web technologies.
+                <span className="text-primary font-semibold">
+                  {" "}
+                  Specializing in
+                </span>{" "}
+                scalable applications and innovative solutions.
               </p>
             </div>
 
@@ -64,7 +84,7 @@ export default function Hero() {
                     .querySelector("#projects")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="text-base px-8 py-3"
+                className="text-base px-8 py-3 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 View My Work
               </Button>
@@ -76,26 +96,37 @@ export default function Hero() {
                     .querySelector("#contact")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="text-base px-8 py-3"
+                className="text-base px-8 py-3 border-2 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 Get In Touch
               </Button>
             </div>
 
             {/* Social Links */}
-            <div className="flex space-x-6 pt-4">
+            <div className="flex space-x-4 pt-4">
               {Object.entries(portfolioConfig.social).map(([platform, url]) => {
                 const Icon = socialIcons[platform as keyof typeof socialIcons];
+                const socialColors = {
+                  github: "hover:bg-[#333] hover:text-white",
+                  linkedin: "hover:bg-[#0077b5] hover:text-white",
+                  twitter: "hover:bg-[#1DA1F2] hover:text-white",
+                  email: "hover:bg-primary hover:text-primary-foreground",
+                };
                 return (
                   <a
                     key={platform}
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors p-2 hover:bg-muted rounded-lg"
+                    className={`group relative p-3 rounded-xl bg-muted/50 border border-border text-muted-foreground transition-all duration-300 ${
+                      socialColors[platform as keyof typeof socialColors]
+                    } hover:shadow-lg hover:scale-110`}
                   >
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-6 h-6" />
                     <span className="sr-only">{platform}</span>
+                    <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-foreground text-background px-2 py-1 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                      {platform.charAt(0).toUpperCase() + platform.slice(1)}
+                    </div>
                   </a>
                 );
               })}

@@ -61,14 +61,22 @@ export default function Projects() {
               <Button
                 variant={filter === "all" ? "default" : "outline"}
                 onClick={() => setFilter("all")}
-                className="px-6"
+                className={`px-6 ${
+                  filter === "all"
+                    ? "bg-gradient-to-r from-primary to-primary/80 shadow-lg"
+                    : "hover:bg-muted/80"
+                } transition-all duration-300`}
               >
                 All Projects ({portfolioConfig.projects.length})
               </Button>
               <Button
                 variant={filter === "featured" ? "default" : "outline"}
                 onClick={() => setFilter("featured")}
-                className="px-6"
+                className={`px-6 ${
+                  filter === "featured"
+                    ? "bg-gradient-to-r from-primary to-primary/80 shadow-lg"
+                    : "hover:bg-muted/80"
+                } transition-all duration-300`}
               >
                 Featured (
                 {portfolioConfig.projects.filter((p) => p.featured).length})
@@ -97,12 +105,35 @@ export default function Projects() {
                   </div>
                   {project.featured && (
                     <div className="absolute top-4 left-4">
-                      <Badge className="bg-primary text-primary-foreground">
+                      <Badge className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground shadow-lg">
                         <Star className="w-3 h-3 mr-1" />
                         Featured
                       </Badge>
                     </div>
                   )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="flex gap-2">
+                      {project.githubUrl && (
+                        <button
+                          onClick={() =>
+                            window.open(project.githubUrl, "_blank")
+                          }
+                          className="p-2 bg-background/90 backdrop-blur-sm rounded-full text-foreground hover:bg-background transition-colors"
+                        >
+                          <Github className="w-4 h-4" />
+                        </button>
+                      )}
+                      {project.liveUrl && (
+                        <button
+                          onClick={() => window.open(project.liveUrl, "_blank")}
+                          className="p-2 bg-background/90 backdrop-blur-sm rounded-full text-foreground hover:bg-background transition-colors"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </button>
+                      )}
+                    </div>
+                  </div>
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                     <Button size="sm" variant="secondary" asChild>
                       <a
@@ -139,16 +170,21 @@ export default function Projects() {
                     </div>
 
                     {/* Technologies */}
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <Badge
-                          key={tech}
-                          variant="secondary"
-                          className="text-xs"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
+                    <div>
+                      <h4 className="text-sm font-semibold text-foreground mb-2">
+                        Tech Stack
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech) => (
+                          <Badge
+                            key={tech}
+                            variant="secondary"
+                            className="text-xs bg-muted hover:bg-muted/80 transition-colors"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
 
                     {/* Links */}

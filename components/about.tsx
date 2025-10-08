@@ -78,7 +78,7 @@ export default function About() {
                   </CardContent>
                 </Card>
 
-                <Card className="bg-background/50 border-border sm:col-span-2 lg:col-span-1">
+                <Card className="bg-background/50 border-border">
                   <CardContent className="p-4 flex items-center justify-center">
                     <Button
                       onClick={() =>
