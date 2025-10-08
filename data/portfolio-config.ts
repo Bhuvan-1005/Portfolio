@@ -26,7 +26,7 @@ export const portfolioConfig = {
     { name: "Node.js", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
     { name: "Python", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
     { name: "PostgreSQL", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-    { name: "AWS", level: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+    { name: "AWS", level: 75, icon: "https://devicons.railway.app/aws.svg" },
     { name: "Docker", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
     { name: "Git", level: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
   ],
@@ -38,7 +38,7 @@ export const portfolioConfig = {
       description:
         "A comprehensive crisis management web application built with vanilla JavaScript, featuring responsive design and interactive user interfaces for emergency response coordination.",
       image:
-        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://imgs.search.brave.com/G4_1onh9D3MjZFEai0jLirYLmgH5NaTVaLjxo1RJrTc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQz/NjQ0ODg4L3Bob3Rv/L2VhcnRocXVha2Uu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PWFhZGFkM1U2S2Ey/dTk5YWhXQk9Ndkxl/bjJpS0daM2oxQ09Y/eHBQTjJndE09",
       technologies: ["JavaScript", "CSS", "HTML"],
       githubUrl: "https://github.com/Bhuvan-1005/CrisisPOP",
       liveUrl: "",
@@ -69,7 +69,7 @@ export const portfolioConfig = {
       description:
         "A modern, responsive portfolio website built with Next.js 14 and TypeScript. Features dark/light theme toggle, contact form with email integration, GitHub activity display, and optimized performance with Tailwind CSS and Radix UI components.",
       image:
-        "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://imgs.search.brave.com/IeRnUuEjmJrys1TZ30D7J_vFLq5i0W7sFYZOAxIrU24/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aGVt/ZXdhZ29uLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/MS9hcHByb2FjaC5q/cGc",
       technologies: [
         "Next.js",
         "TypeScript",
