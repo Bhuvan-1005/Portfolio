@@ -15,9 +15,9 @@ import {
   Send,
   Github,
   Linkedin,
-  Twitter,
   Loader2,
 } from "lucide-react";
+import { XIcon } from "@/components/ui/x-icon";
 import { portfolioConfig } from "@/data/portfolio-config";
 
 export default function Contact() {
@@ -105,7 +105,7 @@ export default function Contact() {
   const socialIcons = {
     github: Github,
     linkedin: Linkedin,
-    twitter: Twitter,
+    twitter: XIcon,
   };
 
   return (
