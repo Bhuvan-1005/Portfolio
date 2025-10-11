@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 
-const GITHUB_USERNAME = "alexjohnson" // Replace with actual username
-const GITHUB_API_URL = "https://api.github.com"
+const GITHUB_USERNAME = "Bhuvan1005" // Replace with actual username
+const GITHUB_API_URL = "https://api.github.com/Bhuvan1005"
 
 export async function GET() {
   try {

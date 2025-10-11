@@ -129,6 +129,18 @@ export const portfolioConfig = {
       liveUrl: "",
       featured: true,
     },
+    {
+      id: 5,
+      title: "Attendance System",
+      description:
+        "A lightweight attendance management system built to simplify student and staff attendance tracking. Features include role-based access, CSV export/import, real-time reports, and a responsive dashboard.",
+      image:
+        "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/266908282/original/9bb9fa2e6d7b12bb8e74b1ec4b9a5c63a9a6e8f4/attendance-system-app-development.png",
+      technologies: ["React", "Node.js", "TypeScript", "PostgreSQL"],
+      githubUrl: "https://github.com/Bhuvan-1005/attendance-system",
+      liveUrl: "",
+      featured: false,
+    },
   ],
 
   experience: [

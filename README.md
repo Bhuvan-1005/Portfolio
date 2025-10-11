@@ -10,6 +10,7 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Ta
 ## 🌟 Key Features
 
 ### 🎨 **Modern Design & UX**
+
 - **Dark Theme**: Professional dark theme optimized for developer aesthetic
 - **Responsive Layout**: Seamlessly adapts to desktop, tablet, and mobile devices
 - **Enhanced Loading Screen**: Custom animated loading experience with Next.js branding
@@ -17,6 +18,7 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Ta
 - **Custom Favicon**: Next.js branded favicon with PWA support
 
 ### 💼 **Portfolio Sections**
+
 - **Hero Section**: Dynamic typing effect with social media integration
 - **About Me**: Personal story with downloadable resume functionality
 - **Skills Showcase**: Interactive skill cards with official technology logos and proficiency levels
@@ -26,6 +28,7 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Ta
 - **Contact Form**: Professional contact system with email notifications
 
 ### 🔧 **Technical Features**
+
 - **GitHub API Integration**: Live stats, contribution graphs, and repository data
 - **Email System**: Contact form with Resend API integration and custom templates
 - **PWA Support**: Progressive Web App functionality with manifest.json
@@ -35,6 +38,7 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Ta
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **Next.js 14** - React framework with App Router and Server Components
 - **TypeScript** - Type-safe development with strict mode
 - **Tailwind CSS** - Utility-first CSS framework for rapid styling
@@ -42,11 +46,13 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Ta
 - **Lucide React** - Modern icon library with 1000+ icons
 
 ### Backend & APIs
+
 - **Next.js API Routes** - Serverless API endpoints
 - **Resend** - Modern email delivery service
 - **GitHub API** - Real-time repository and user statistics
 
 ### Development & Deployment
+
 - **Vercel** - Zero-configuration deployment platform
 - **GitHub** - Version control with automated deployments
 - **ESLint & Prettier** - Code quality and formatting
@@ -96,12 +102,14 @@ portfolio-website/
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/Bhuvan-1005/Portfolio.git
    cd Portfolio
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -110,11 +118,13 @@ portfolio-website/
 
 3. **Set up environment variables**
    Create a `.env.local` file in the root directory:
+
    ```env
    RESEND_API_KEY=your_resend_api_key_here
    ```
 
 4. **Run the development server**
+
    ```bash
    npm run dev
    # or
@@ -150,10 +160,11 @@ export const portfolioConfig = {
     // ... other settings
   },
   // ... rest of configuration
-}
+};
 ```
 
 **Project Showcase** - Update the projects array in the same file:
+
 ```typescript
 projects: [
   {
@@ -162,20 +173,21 @@ projects: [
     technologies: ["React", "Node.js", "TypeScript"],
     githubUrl: "https://github.com/username/repo",
     liveUrl: "https://your-project.com",
-    featured: true
-  }
-]
+    featured: true,
+  },
+];
 ```
 
 **Skills & Technologies** - Modify the skills array:
+
 ```typescript
 skills: [
   {
     name: "Technology Name",
     level: 90, // 0-100
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/..."
-  }
-]
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/...",
+  },
+];
 ```
 
 ```typescript
@@ -213,12 +225,14 @@ Add your projects to the `projects` array in the same file.
 ### Alternative Deployments
 
 **Netlify**:
+
 ```bash
 npm run build
 # Deploy the .next folder
 ```
 
 **GitHub Pages**:
+
 ```bash
 npm run build
 npm run export
@@ -228,12 +242,14 @@ npm run export
 ## 📱 Performance & Optimization
 
 ### ⚡ Performance Features
+
 - **Next.js App Router**: Server-side rendering and static generation
 - **Image Optimization**: Automatic image optimization and lazy loading
 - **Bundle Analysis**: Optimized component tree-shaking
 - **Lighthouse Score**: 90+ across all metrics
 
 ### 🧹 Clean Codebase
+
 - **TypeScript**: Type safety and better developer experience
 - **ESLint**: Code quality and consistency
 - **Component Cleanup**: Removed unused UI components (35+ files cleaned)
@@ -255,6 +271,7 @@ npm run export       # Export static files for GitHub Pages
 ## 📊 Features Breakdown
 
 ### 🎯 Core Components
+
 - ✅ **Hero Section** - Dynamic typing effect with social links
 - ✅ **About Section** - Personal story with resume download
 - ✅ **Skills Showcase** - Interactive technology cards with proficiency
@@ -265,6 +282,7 @@ npm run export       # Export static files for GitHub Pages
 - ✅ **PWA Support** - Progressive Web App functionality
 
 ### 🔧 Technical Highlights
+
 - ✅ **TypeScript Integration** - Full type safety
 - ✅ **Responsive Design** - Mobile-first approach
 - ✅ **SEO Optimization** - Meta tags and Open Graph
@@ -277,6 +295,7 @@ npm run export       # Export static files for GitHub Pages
 ## 🤝 Contributing & Support
 
 ### Contributing
+
 While this is a personal portfolio, feedback and suggestions are always welcome!
 
 1. **Fork the repository**
@@ -286,6 +305,7 @@ While this is a personal portfolio, feedback and suggestions are always welcome!
 5. **Open a Pull Request**
 
 ### Support
+
 - 🐛 **Issues**: Report bugs via GitHub Issues
 - 💡 **Feature Requests**: Suggest improvements
 - 📧 **Contact**: Reach out via the contact form
@@ -309,10 +329,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 [![GitHub](https://img.shields.io/badge/GitHub-Bhuvan--1005-181717?logo=github)](https://github.com/Bhuvan-1005)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?logo=linkedin)](https://www.linkedin.com/in/bhuvaneshwar-n-2577232b3)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-success?logo=vercel)](https://portfolio-website-six-olive-95.vercel.app)
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-success?logo=vercel)](https://portfolio-website-six-olive-95.vercel.app) 2. Create a feature branch 3. Make your changes 4. Submit a pull request
 
 ## 📄 License
 
