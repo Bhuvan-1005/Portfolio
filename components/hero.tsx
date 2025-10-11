@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { XIcon } from "@/components/ui/x-icon";
 import { portfolioConfig } from "@/data/portfolio-config";
 import TypingEffect from "@/components/typing-effect";
 
@@ -24,7 +25,7 @@ export default function Hero() {
   const socialIcons = {
     github: Github,
     linkedin: Linkedin,
-    twitter: Twitter,
+    twitter: XIcon,
     email: Mail,
   };
 
@@ -54,7 +55,6 @@ export default function Hero() {
                     "Full Stack Developer",
                     "React Specialist",
                     "Node.js Expert",
-                    "Blockchain Developer",
                     "Problem Solver",
                   ]}
                   speed={120}
@@ -103,13 +103,13 @@ export default function Hero() {
             </div>
 
             {/* Social Links */}
-            <div className="flex space-x-4 pt-4">
+            <div className="flex space-x-4 pt-4 pb-8 sm:pb-4">
               {Object.entries(portfolioConfig.social).map(([platform, url]) => {
                 const Icon = socialIcons[platform as keyof typeof socialIcons];
                 const socialColors = {
                   github: "hover:bg-[#333] hover:text-white",
                   linkedin: "hover:bg-[#0077b5] hover:text-white",
-                  twitter: "hover:bg-[#1DA1F2] hover:text-white",
+                  twitter: "hover:bg-[#000000] hover:text-white",
                   email: "hover:bg-primary hover:text-primary-foreground",
                 };
                 return (
@@ -165,7 +165,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-6 sm:bottom-4 left-1/2 transform -translate-x-1/2">
         <button
           onClick={scrollToAbout}
           className="text-muted-foreground hover:text-foreground transition-colors animate-bounce"
