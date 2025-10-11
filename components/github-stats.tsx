@@ -64,7 +64,7 @@ export default function GitHubStats() {
               <CardContent className="p-0">
                 <div className="relative w-full">
                   <img
-                    src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&text_color=9ca3af&icon_color=6366f1&bg_color=00000000&include_all_commits=true&count_private=true`}
+                    src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&text_color=9ca3af&icon_color=196127&bg_color=00000000&include_all_commits=true&count_private=true`}
                     alt="GitHub Stats"
                     className="w-full h-auto"
                   />
@@ -77,7 +77,7 @@ export default function GitHubStats() {
               <CardContent className="p-0">
                 <div className="relative w-full">
                   <img
-                    src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=transparent&hide_border=true&stroke=6366f1&ring=6366f1&fire=6366f1&currStreakLabel=ffffff&sideLabels=ffffff&currStreakNum=ffffff&dates=9ca3af&sideNums=9ca3af&background=00000000`}
+                    src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=transparent&hide_border=true&stroke=196127&ring=196127&fire=196127&currStreakLabel=ffffff&sideLabels=ffffff&currStreakNum=ffffff&dates=9ca3af&sideNums=9ca3af&background=00000000`}
                     alt="GitHub Streak"
                     className="w-full h-auto"
                   />
@@ -112,7 +112,7 @@ export default function GitHubStats() {
                 </div>
                 <div className="relative w-full bg-muted/20 rounded-lg p-4">
                   <img
-                    src={`https://ghchart.rshah.org/6366f1/${githubUsername}`}
+                    src={`https://ghchart.rshah.org/196127/${githubUsername}`}
                     alt="GitHub Contribution Calendar"
                     className="w-full h-auto"
                   />
@@ -132,7 +132,7 @@ export default function GitHubStats() {
               </div>
               <div className="relative w-full">
                 <img
-                  src={`https://github-readme-activity-graph.vercel.app/graph?username=${githubUsername}&theme=react-dark&hide_border=true&bg_color=00000000&color=6366f1&line=6366f1&point=ffffff&area=true&area_color=6366f1`}
+                  src={`https://github-readme-activity-graph.vercel.app/graph?username=${githubUsername}&theme=react-dark&hide_border=true&bg_color=00000000&color=7bc96f&line=7bc96f&point=ffffff&area=true&area_color=7bc96f`}
                   alt="Contribution Graph"
                   className="w-full h-auto rounded-lg"
                 />
