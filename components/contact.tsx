@@ -258,7 +258,7 @@ export default function Contact() {
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell me about your project or just say hello..."
+                      placeholder="Tell me about your project or just say hello...."
                       rows={6}
                       value={formData.message}
                       onChange={handleInputChange}
