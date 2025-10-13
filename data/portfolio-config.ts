@@ -70,13 +70,13 @@ export const portfolioConfig = {
   projects: [
     {
       id: 1,
-      title: "CrisisPOP",
+      title: "Waste Prediction",
       description:
-        "A comprehensive crisis management web application built with vanilla JavaScript, featuring responsive design and interactive user interfaces for emergency response coordination.",
+        "A machine learning powered waste prediction system that helps municipalities and organizations optimize waste collection schedules and reduce costs. Features include real-time analytics, predictive modeling, and a user-friendly dashboard.",
       image:
-        "https://imgs.search.brave.com/G4_1onh9D3MjZFEai0jLirYLmgH5NaTVaLjxo1RJrTc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQz/NjQ0ODg4L3Bob3Rv/L2VhcnRocXVha2Uu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PWFhZGFkM1U2S2Ey/dTk5YWhXQk9Ndkxl/bjJpS0daM2oxQ09Y/eHBQTjJndE09",
-      technologies: ["JavaScript", "CSS", "HTML"],
-      githubUrl: "https://github.com/Bhuvan-1005/CrisisPOP",
+        "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      technologies: ["Python", "Machine Learning", "React", "Node.js"],
+      githubUrl: "https://github.com/Bhuvan-1005/Waste-Prediction",
       liveUrl: "",
       featured: true,
     },
