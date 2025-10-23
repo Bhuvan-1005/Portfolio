@@ -81,7 +81,7 @@ export default function GitHubStats() {
                 ) : (
                   <div className="relative w-full">
                     <img
-                      src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&text_color=9ca3af&icon_color=22c55e&bg_color=00000000&include_all_commits=true&count_private=true`}
+                      src={`https://github-readme-stats-sigma-five.vercel.app/api?username=${githubUsername}&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&text_color=9ca3af&icon_color=22c55e&bg_color=00000000&include_all_commits=true&count_private=true`}
                       alt="GitHub Stats"
                       className="w-full h-auto"
                       onError={() => handleImageError('stats')}
@@ -108,7 +108,7 @@ export default function GitHubStats() {
                 ) : (
                   <div className="relative w-full">
                     <img
-                      src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=transparent&hide_border=true&stroke=22c55e&ring=22c55e&fire=22c55e&currStreakLabel=ffffff&sideLabels=ffffff&currStreakNum=ffffff&dates=9ca3af&sideNums=9ca3af&background=00000000`}
+                      src={`https://streak-stats.demolab.com/?user=${githubUsername}&theme=transparent&hide_border=true&stroke=22c55e&ring=22c55e&fire=22c55e&currStreakLabel=ffffff&sideLabels=ffffff&currStreakNum=ffffff&dates=9ca3af&sideNums=9ca3af&background=00000000`}
                       alt="GitHub Streak"
                       className="w-full h-auto"
                       onError={() => handleImageError('streak')}
@@ -138,7 +138,7 @@ export default function GitHubStats() {
                 ) : (
                   <div className="relative w-full">
                     <img
-                      src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact&theme=transparent&hide_border=true&title_color=ffffff&text_color=9ca3af&bg_color=00000000&langs_count=8`}
+                      src={`https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact&theme=transparent&hide_border=true&title_color=ffffff&text_color=9ca3af&bg_color=00000000&langs_count=8`}
                       alt="Most Used Languages"
                       className="w-full h-auto"
                       onError={() => handleImageError('languages')}
@@ -169,7 +169,7 @@ export default function GitHubStats() {
                     </div>
                   ) : (
                     <img
-                      src={`https://ghchart.rshah.org/22c55e/${githubUsername}`}
+                      src={`https://github-readme-activity-graph.vercel.app/graph?username=${githubUsername}&theme=minimal&hide_border=true&bg_color=00000000&color=22c55e&line=22c55e&point=ffffff&area=true&area_color=22c55e20`}
                       alt="GitHub Contribution Calendar"
                       className="w-full h-auto"
                       onError={() => handleImageError('calendar')}
@@ -201,7 +201,7 @@ export default function GitHubStats() {
                   </div>
                 ) : (
                   <img
-                    src={`https://github-readme-activity-graph.vercel.app/graph?username=${githubUsername}&theme=react-dark&hide_border=true&bg_color=00000000&color=7bc96f&line=7bc96f&point=ffffff&area=true&area_color=7bc96f`}
+                    src={`https://github-contribution-graph.ez4o.com/?username=${githubUsername}&theme=dark&hide_border=true&bg_color=00000000&color=7bc96f&line=7bc96f&point=ffffff`}
                     alt="Contribution Graph"
                     className="w-full h-auto rounded-lg"
                     onError={() => handleImageError('graph')}
