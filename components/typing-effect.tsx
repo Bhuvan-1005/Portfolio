@@ -8,6 +8,7 @@ interface TypingEffectProps {
   speed?: number;
   deleteSpeed?: number;
   pauseDuration?: number;
+  onChangeIndex?: (index: number) => void;
 }
 
 export default function TypingEffect({
@@ -15,6 +16,7 @@ export default function TypingEffect({
   speed = 100,
   deleteSpeed = 50,
   pauseDuration = 2000,
+  onChangeIndex,
 }: TypingEffectProps) {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
@@ -35,7 +37,11 @@ export default function TypingEffect({
 
         if (currentText === "") {
           setIsDeleting(false);
-          setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+          setCurrentTextIndex((prev) => {
+            const next = (prev + 1) % texts.length;
+            onChangeIndex?.(next);
+            return next;
+          });
         }
       } else {
         setCurrentText(fullText.substring(0, currentText.length + 1));

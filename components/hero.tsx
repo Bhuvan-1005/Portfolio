@@ -7,6 +7,7 @@ import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { XIcon } from "@/components/ui/x-icon";
 import { portfolioConfig } from "@/data/portfolio-config";
 import TypingEffect from "@/components/typing-effect";
+import SkillIcon from "@/components/ui/skill-icon";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -49,7 +50,8 @@ export default function Hero() {
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 {portfolioConfig.personal.name}
               </h1>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-muted-foreground">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-muted-foreground flex items-center gap-4">
+                <SkillIcon emoji="💻" size={44} />
                 <TypingEffect
                   texts={[
                     "Full Stack Developer",
@@ -60,6 +62,12 @@ export default function Hero() {
                   speed={120}
                   deleteSpeed={80}
                   pauseDuration={3000}
+                  onChangeIndex={(idx) => {
+                    // swap emoji based on index
+                    const icons = ["💻", "⚛️", "🌐", "🧠"];
+                    const iconEl = document.querySelector('#skill-icon span');
+                    if (iconEl) iconEl.textContent = icons[idx] || icons[0];
+                  }}
                 />
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
@@ -138,26 +146,28 @@ export default function Hero() {
               mounted ? "animate-fade-in" : "opacity-0"
             }`}
           >
-            <div className="relative">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl transform rotate-6"></div>
-                <div className="relative w-full h-full bg-muted rounded-2xl overflow-hidden border border-border">
+            <div className="relative group">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 relative transition-all duration-500 group-hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl transform rotate-6 transition-all duration-500 group-hover:rotate-12 group-hover:from-primary/40 group-hover:to-primary/10"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-primary/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl scale-110"></div>
+                <div className="relative w-full h-full bg-muted rounded-2xl overflow-hidden border border-border transition-all duration-500 group-hover:border-primary/50 group-hover:shadow-2xl group-hover:shadow-primary/20">
                   <Image
                     src={portfolioConfig.personal.profileImage}
                     alt={portfolioConfig.personal.name}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-all duration-500 group-hover:scale-110"
                     priority
                     sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 384px"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                 </div>
               </div>
 
-              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-20 sm:h-20 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20">
-                <span className="text-lg sm:text-2xl">⚡</span>
+              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-20 sm:h-20 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20 transition-all duration-500 group-hover:bg-primary/20 group-hover:border-primary/40 group-hover:scale-110">
+                <span className="text-lg sm:text-2xl transition-all duration-500 group-hover:scale-110">⚡</span>
               </div>
-              <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-10 h-10 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20">
-                <span className="text-sm sm:text-xl">🚀</span>
+              <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-10 h-10 sm:w-16 sm:h-16 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20 transition-all duration-500 group-hover:bg-primary/20 group-hover:border-primary/40 group-hover:scale-110">
+                <span className="text-sm sm:text-xl transition-all duration-500 group-hover:scale-110">🚀</span>
               </div>
             </div>
           </div>
