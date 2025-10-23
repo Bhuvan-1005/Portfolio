@@ -10,7 +10,12 @@ import { portfolioConfig } from "@/data/portfolio-config";
 
 export default function GitHubStats() {
   const [isVisible, setIsVisible] = useState(false);
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
   const sectionRef = useRef<HTMLElement>(null);
+
+  const handleImageError = (imageType: string) => {
+    setImageErrors(prev => ({ ...prev, [imageType]: true }));
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -61,27 +66,55 @@ export default function GitHubStats() {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {/* GitHub Stats */}
             <Card className="overflow-hidden border-border bg-gradient-to-br from-muted/30 to-background">
-              <CardContent className="p-0">
-                <div className="relative w-full">
-                  <img
-                    src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&text_color=9ca3af&icon_color=196127&bg_color=00000000&include_all_commits=true&count_private=true`}
-                    alt="GitHub Stats"
-                    className="w-full h-auto"
-                  />
-                </div>
+              <CardContent className="p-6">
+                {imageErrors.stats ? (
+                  <div className="text-center py-8">
+                    <Github className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold text-foreground mb-2">GitHub Stats</h3>
+                    <p className="text-muted-foreground mb-4">Visit my GitHub profile for latest stats</p>
+                    <Button variant="outline" asChild>
+                      <a href={`https://github.com/${githubUsername}`} target="_blank" rel="noopener noreferrer">
+                        View Profile
+                      </a>
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="relative w-full">
+                    <img
+                      src={`https://github-readme-stats.vercel.app/api?username=${githubUsername}&show_icons=true&theme=transparent&hide_border=true&title_color=ffffff&text_color=9ca3af&icon_color=22c55e&bg_color=00000000&include_all_commits=true&count_private=true`}
+                      alt="GitHub Stats"
+                      className="w-full h-auto"
+                      onError={() => handleImageError('stats')}
+                    />
+                  </div>
+                )}
               </CardContent>
             </Card>
 
             {/* GitHub Streak */}
             <Card className="overflow-hidden border-border bg-gradient-to-br from-muted/30 to-background">
-              <CardContent className="p-0">
-                <div className="relative w-full">
-                  <img
-                    src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=transparent&hide_border=true&stroke=196127&ring=196127&fire=196127&currStreakLabel=ffffff&sideLabels=ffffff&currStreakNum=ffffff&dates=9ca3af&sideNums=9ca3af&background=00000000`}
-                    alt="GitHub Streak"
-                    className="w-full h-auto"
-                  />
-                </div>
+              <CardContent className="p-6">
+                {imageErrors.streak ? (
+                  <div className="text-center py-8">
+                    <TrendingUp className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Contribution Streak</h3>
+                    <p className="text-muted-foreground mb-4">Consistent daily contributions to open source</p>
+                    <Button variant="outline" asChild>
+                      <a href={`https://github.com/${githubUsername}`} target="_blank" rel="noopener noreferrer">
+                        View Activity
+                      </a>
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="relative w-full">
+                    <img
+                      src={`https://github-readme-streak-stats.herokuapp.com/?user=${githubUsername}&theme=transparent&hide_border=true&stroke=22c55e&ring=22c55e&fire=22c55e&currStreakLabel=ffffff&sideLabels=ffffff&currStreakNum=ffffff&dates=9ca3af&sideNums=9ca3af&background=00000000`}
+                      alt="GitHub Streak"
+                      className="w-full h-auto"
+                      onError={() => handleImageError('streak')}
+                    />
+                  </div>
+                )}
               </CardContent>
             </Card>
           </div>
@@ -90,14 +123,28 @@ export default function GitHubStats() {
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             {/* Most Used Languages */}
             <Card className="overflow-hidden border-border bg-gradient-to-br from-muted/30 to-background">
-              <CardContent className="p-0">
-                <div className="relative w-full">
-                  <img
-                    src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact&theme=transparent&hide_border=true&title_color=ffffff&text_color=9ca3af&bg_color=00000000&langs_count=8`}
-                    alt="Most Used Languages"
-                    className="w-full h-auto"
-                  />
-                </div>
+              <CardContent className="p-6">
+                {imageErrors.languages ? (
+                  <div className="text-center py-8">
+                    <Code2 className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold text-foreground mb-2">Programming Languages</h3>
+                    <p className="text-muted-foreground mb-4">JavaScript, TypeScript, Python, React, Node.js</p>
+                    <Button variant="outline" asChild>
+                      <a href={`https://github.com/${githubUsername}?tab=repositories`} target="_blank" rel="noopener noreferrer">
+                        View Repositories
+                      </a>
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="relative w-full">
+                    <img
+                      src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUsername}&layout=compact&theme=transparent&hide_border=true&title_color=ffffff&text_color=9ca3af&bg_color=00000000&langs_count=8`}
+                      alt="Most Used Languages"
+                      className="w-full h-auto"
+                      onError={() => handleImageError('languages')}
+                    />
+                  </div>
+                )}
               </CardContent>
             </Card>
 
@@ -111,11 +158,23 @@ export default function GitHubStats() {
                   </h3>
                 </div>
                 <div className="relative w-full bg-muted/20 rounded-lg p-4">
-                  <img
-                    src={`https://ghchart.rshah.org/196127/${githubUsername}`}
-                    alt="GitHub Contribution Calendar"
-                    className="w-full h-auto"
-                  />
+                  {imageErrors.calendar ? (
+                    <div className="text-center py-8">
+                      <p className="text-muted-foreground">Contribution calendar temporarily unavailable</p>
+                      <Button variant="outline" className="mt-4" asChild>
+                        <a href={`https://github.com/${githubUsername}`} target="_blank" rel="noopener noreferrer">
+                          View on GitHub
+                        </a>
+                      </Button>
+                    </div>
+                  ) : (
+                    <img
+                      src={`https://ghchart.rshah.org/22c55e/${githubUsername}`}
+                      alt="GitHub Contribution Calendar"
+                      className="w-full h-auto"
+                      onError={() => handleImageError('calendar')}
+                    />
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -131,11 +190,23 @@ export default function GitHubStats() {
                 </h3>
               </div>
               <div className="relative w-full">
-                <img
-                  src={`https://github-readme-activity-graph.vercel.app/graph?username=${githubUsername}&theme=react-dark&hide_border=true&bg_color=00000000&color=7bc96f&line=7bc96f&point=ffffff&area=true&area_color=7bc96f`}
-                  alt="Contribution Graph"
-                  className="w-full h-auto rounded-lg"
-                />
+                {imageErrors.graph ? (
+                  <div className="text-center py-8">
+                    <p className="text-muted-foreground">Activity graph temporarily unavailable</p>
+                    <Button variant="outline" className="mt-4" asChild>
+                      <a href={`https://github.com/${githubUsername}`} target="_blank" rel="noopener noreferrer">
+                        View Activity on GitHub
+                      </a>
+                    </Button>
+                  </div>
+                ) : (
+                  <img
+                    src={`https://github-readme-activity-graph.vercel.app/graph?username=${githubUsername}&theme=react-dark&hide_border=true&bg_color=00000000&color=7bc96f&line=7bc96f&point=ffffff&area=true&area_color=7bc96f`}
+                    alt="Contribution Graph"
+                    className="w-full h-auto rounded-lg"
+                    onError={() => handleImageError('graph')}
+                  />
+                )}
               </div>
             </CardContent>
           </Card>
